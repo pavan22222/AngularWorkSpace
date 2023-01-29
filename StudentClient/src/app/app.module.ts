@@ -10,6 +10,7 @@ import { RegisterComponent } from './login/register/register.component';
 import { OneWayBindingComponent } from './bindings/one-way-binding.component';
 import { TwoWayBindingComponent } from './bindings/two-way-binding.component';
 import { MVVMComponent } from './bindings/mvvm.component';
+import { EventBindingComponent } from './events/event-binding.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MVVMComponent } from './bindings/mvvm.component';
     RegisterComponent,
     OneWayBindingComponent,
     TwoWayBindingComponent,
-    MVVMComponent
+    MVVMComponent,
+    EventBindingComponent
   ],
   imports: [
     BrowserModule,
