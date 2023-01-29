@@ -1,0 +1,101 @@
+<div class="container-fluid">
+
+    <label class="h2">NgIf Directive</label>
+    <dl>
+        <dt>Show</dt>
+        <dd><input type="checkbox" ngModel name="flag" #flag="ngModel"></dd>
+        <dt>Select City</dt>
+        <dd>
+            <select name="city" ngModel #city="ngModel" (change)="cityChange($event)">
+                <option value="Hyderabad">Hyd</option>
+                <option value="Bangalore">Ban</option>
+                <option value="Chennai">Che</option>
+            </select>
+        </dd>
+
+    </dl>
+    <div>
+        <img *ngIf="flag.value ;then trueBlock else falseBlock" src="assets/lion.jfif">
+    </div>
+
+
+    <ng-template #trueBlock>
+
+
+        I am a true block
+    </ng-template>
+
+
+    <ng-template #falseBlock>
+        I am a false Block
+    </ng-template>
+
+
+    
+
+
+    <ul [ngSwitch]="city.value" >
+
+        <li *ngSwitchCase="'Hyderabad'">
+            You Have Selected Hyderabad
+        </li>
+        <li *ngSwitchCase="'Bangalore'">
+            You Have Selected Bangalore
+        </li>
+        <li *ngSwitchCase="'Chennai'">
+            You Have Selected Chennai
+        </li>
+        <li *ngSwitchDefault>
+            You Have Not Selected any City
+        </li>
+    </ul>
+
+</div>
+
+
+<select name="block" ngModel #block="ngModel" (change)="blockChange($event)">
+    <option value="block1">BLOCK1</option>
+    <option value="block2">BLOCK2</option>
+    <option value="block3">BLOCK3</option>
+</select>
+
+
+<ng-template #block1>
+
+    I am block1 Content Projection
+
+</ng-template>
+
+<ng-template #block2>
+
+    I am block2 Content Projection
+
+</ng-template>
+
+<ng-template #block3>
+
+    I am block3 Content Projection
+
+</ng-template>
+
+{{block.value}}
+
+
+<div *ngIf="block.value != null; then contentProjection"></div>
+
+
+
+<div>
+
+
+    <ul>
+        <li *ngFor="let product of products; let index=index">
+            {{product.id}} :: {{index}}
+        </li>
+    </ul>
+
+    {{products | json}}
+
+
+
+</div>

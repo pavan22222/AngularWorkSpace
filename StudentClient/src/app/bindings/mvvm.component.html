@@ -1,0 +1,27 @@
+<div class="container-fluid">
+
+    <dl>
+        <dt>
+            Enter Name
+        </dt>
+        <dl>
+            <input type="text" name="userName" ngModel #userName="ngModel" class="form-control" required>
+        </dl>
+    </dl>
+
+
+    <ol class="bg-success"><h2 style="margin-left: -20px;">Properties of ngModel</h2>
+
+        <li>valid :: {{userName.valid}}</li>
+        <li>invalid :: {{userName.invalid}}</li>
+        <li>touched :: {{userName.touched}}</li>
+        <li>untouched :: {{userName.untouched}}</li>
+        <li>errors :: {{userName.errors | json}}</li>
+        <li>dirty :: {{userName.dirty}}</li>
+        <li>pristine :: {{userName.pristine}}</li>
+        <li>value :: {{userName.value}}</li>
+    </ol>
+
+
+
+</div>

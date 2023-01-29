@@ -1,0 +1,48 @@
+<div class="container-fluid row">
+
+    <h2 style="text-align: center;">Two Way Data Binding</h2>
+
+    <div class=" col-6 p-3 align-items-center bg-success justify-content-center border broder-2 border-primary rounded rounded-2">
+
+        <dl>
+            <dt>Enter name</dt>
+            <dd><input type="text" [(ngModel)]="product.name" class="form-control"></dd>
+            <dt>Enter Cost</dt>
+            <dd><input type="text" [(ngModel)]="product.cost" class="form-control"></dd>
+            <dt>Select City</dt>
+            <dd>
+                <select [(ngModel)]="product.type" class="form-select">
+                    <option value="Electronics">Electronics</option>
+                    <option value="Cloths">Cloths</option>
+                    <option value="Mobiles">Mobiles</option>
+                </select>
+            </dd>
+
+            <dt>Stock Availables</dt>
+            <dd><input type="checkbox" class="form-check-input" [(ngModel)]="product.available" value="true"> Yes
+            </dd>
+
+        </dl>
+
+        <button class="btn btn-primary w-50" (click)="onClick()">Update</button>
+
+    </div>
+
+
+
+    <div class="col-6 border broder-2 border-danger bg-danger " >
+        <dl>
+            <dt>Name</dt>
+            <dd>{{updatedProduct.name}}</dd>
+            <dt>Type</dt>
+            <dd>{{updatedProduct.type}}</dd>
+            <dt>Cost</dt>
+            <dd>{{updatedProduct.cost}}</dd>
+            <dt>Available</dt>
+            <dd>{{updatedProduct.available ? "Available" : "Not Available"}}</dd>
+        </dl>
+    </div>
+
+
+
+</div>

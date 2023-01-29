@@ -1,0 +1,36 @@
+
+
+<div>
+
+    <input name="class1" ngModel #class1="ngModel" type="checkbox">
+    <input name="class2" ngModel #class2="ngModel" type="checkbox">
+    <input name="class3" ngModel #class3="ngModel" type="checkbox">
+
+    <div [ngClass]="'class1'">
+        I am Paragraph
+    </div>
+
+    <div [ngClass]="['class1','class2']">
+        I am Paragraph
+    </div>
+
+    <div [ngClass]="{'class1':class1.value,'class2':class2.value,'class3':class3.value}">
+        I am Paragraph
+    </div>
+
+</div>
+
+
+<select name="colorName" ngModel #colorName="ngModel">
+
+    <option value="red">Red</option>
+    <option value="green">Green</option>
+    <option value="pink">Pink</option>
+
+</select>
+
+<p [ngStyle]="{color:colorName.value}">
+
+I am ngStyle Directive
+
+</p>

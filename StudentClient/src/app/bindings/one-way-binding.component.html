@@ -1,0 +1,46 @@
+<div class="container-fluid">
+
+    <div>
+        <h2>String Interpolation</h2>
+        <input type="button" disabled='{{isDisabled}}' value="Submit" class="btn btn-danger">
+    </div>
+
+    <div>
+        <h2>Property Binding</h2>
+        <input type="button" [disabled]="isDisabled" value="Submit" class="btn btn-dark">
+
+
+    </div>
+
+    <br>
+    <button (click)="change()" class="btn btn-primary">Change</button>
+
+
+
+
+    <img src="assets/{{imageUrl}}">
+
+    {{age}}
+
+    <div>
+
+        <h2>Attribute Binding</h2>
+        <table class="border border-2 border-primary p-3" [width]="width" [attr.height]="height">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+            </thead>
+            <tbody class="items-align-center justify-content-center" >
+                <tr class="p-4">
+                    <td class="m-3">1</td>
+                    <td>Pavan</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+</div>
