@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <h2>Parent Component</h2>
+    <input type="text" [(ngModel)]="message" class="form-control">
+    <p>Data From Child Component
+        {{childMessage}}
+
+        <br>{{childObj | json}}
+
+    </p>
+    
+</div>
+
+<st-child [message]="message" [product]="product" (submitMessage)="childMessageUpdated($event)" 
+(submitObject)="childObject($event)" ></st-child>

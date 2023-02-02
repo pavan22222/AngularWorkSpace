@@ -1,0 +1,32 @@
+<div class="container-fluid aligin-items-center justify-content-center">
+
+
+<dl>
+    <dt>Enter Name</dt>
+    <dd><input type="text" [(ngModel)]="name" class="form-control" (keyup)="keyUp(name)"
+        (keypress)="keyPress(name)" (keydown)="keyDown(name)"></dd>
+
+    <dt>Enter Age</dt>
+    <dd><input type="text" [(ngModel)]="age" class="form-control" (mouseover)="mouseOver($event)" (mouseout)="mouseOut($event)"
+        (mouseover)="mouseOut($event)" (mousemove)="mouseMove($event)" (mouseout)="mouseDown($event)"></dd>
+
+    <dt>Select Gender</dt>
+    <dd><input type="checkbox" [(ngModel)]="gender" class="form-check-input" name="gender" value="Male"> Male
+    <input type="checkbox" [(ngModel)]="gender" class="form-check-input" name="gender" value="FeMale"> FeMale</dd>
+    
+    <dt>Select City</dt>
+    <dd>
+        <select [(ngModel)]="city" class="form-select">
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Kerela">Kerela</option>
+        </select>
+    </dd>
+    <button type="submit" class="btn btn-success" (click)="click()"
+    (contextmenu)="contextMenu()" (dblclick)="doubleClick()">Save</button>
+</dl>
+
+
+
+
+</div>

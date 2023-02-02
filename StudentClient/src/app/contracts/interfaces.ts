@@ -5,5 +5,4 @@
     cost:number;
     type?:string;
     available:boolean;
-
 }

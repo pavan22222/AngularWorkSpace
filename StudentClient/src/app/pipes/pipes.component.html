@@ -1,0 +1,40 @@
+<div class="container-fluid" class="card bg-white justify-content-center align-items-center">
+
+    <div>
+
+        <dl>
+            <dt>Select City</dt>
+            <input type="text" class="form-control" [(ngModel)]="selectedCity">
+        </dl>
+    </div>
+    <table class="table table-success" style="width: 800px;">
+        <thead style="background-color: darkcyan;">
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Fee</th>
+            <th>Pin Code</th>
+            <th>DOB</th>
+            <th>DOJ</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentList | slice :0:20 | filter : selectedCity | sort : false" >
+                <td>{{student.id}}</td>
+                <td>{{student.name | uppercase }}</td>             
+                <td>{{student.city | titlecase | lowercase}}</td>
+                <td>{{student.fee | currency : 'INR'}}</td>
+                <td>{{student.pincode | number :'3.4'}}</td>
+                <td>{{student.dob | date : 'dd/MM/yyyy'}}</td>
+                <td>{{student.doj | date : 'dd/MMM/yy HH:mm:ss'}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+</div>
+
+<ol>
+    <li *ngFor="let ele of map | keyvalue">{{ele.key}} - {{ele.value}}</li>
+</ol>
+
+

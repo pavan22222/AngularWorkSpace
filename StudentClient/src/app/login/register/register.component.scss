@@ -5,8 +5,43 @@ div{
 h2{
     color: darkred;
     background-color: black;
+    text-align: center;
 }
 
 input.radio{
     padding-left: 100px;
+}
+
+/* .ng-valid{
+    border: 2px solid green;
+    border-radius: 2px;
+}
+
+.ng-invalid{
+    border: 2px solid red;
+    border-radius: 2px;
+} */
+
+input.ng-valid{
+    border: 2px solid green;
+    box-shadow: 2px 2px 2px green;
+}
+
+input.ng-invalid{
+    border: 2p solid red;
+    box-shadow: 2px 2px 2px red;
+}
+
+select.ng-valid{
+    border: 2px solid green;
+    box-shadow: 2px 2px 2px green;
+}
+
+select.ng-invalid{
+    border: 2p solid red;
+    box-shadow: 2px 2px 2px red;
+}
+
+span{
+    color:red;
 }

@@ -1,0 +1,18 @@
+<div class="container-fluid card">
+
+    <dl>
+        <dt>Enter Name</dt>
+        <dd><input type="text" ngModel name="name" #name="ngModel" class="form-control"></dd>
+
+        <dt>Enter Message</dt>
+        <dd><input type="text" ngModel name="message" #message="ngModel" class="form-control"></dd>
+    </dl>
+
+
+
+
+    <st-first-component [name]="name.value" [message]="message.value">
+
+        I am Content Projection
+    </st-first-component>
+</div>

@@ -1,0 +1,31 @@
+<div>
+    <st-filter-list [title]="titleName" [filterList]="filterList"
+        (filterChange)="filterChange($event)"></st-filter-list>
+</div>
+
+<div class="container-fluid" class="card bg-white justify-content-center align-items-center">
+
+    <table class="table table-success" style="width: 800px;">
+        <thead style="background-color: darkcyan;">
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Fee</th>
+            <th>Pin Code</th>
+            <th>DOB</th>
+            <th>DOJ</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of updatedStudentList">
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>             
+                <td>{{student.city}}</td>
+                <td>{{student.fee}}</td>
+                <td>{{student.pincode}}</td>
+                <td>{{student.dob}}</td>
+                <td>{{student.doj}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

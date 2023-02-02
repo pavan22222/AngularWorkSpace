@@ -1,1 +1,6 @@
-<p>event-binding works!</p>
+<div class="container-fluid justify-content-center align-items-center">
+
+    <input type="button" class="btn btn-success " id="button" name="saveButton" value="Save" (click)="saveClick($event)">
+
+    <input type="button" class="btn btn-success" id="button" name="updateButton" value="Update" (click)="updateClick($event,'Pavan',[12,23],{'name':'Pavan','age':20})">
+</div>

@@ -1,35 +1,102 @@
-<div class="container-fluid align-items-center justify-content-center p-4 border border-2 border-primary rounded rounded-2 ">
+<!-- <div
+    class="container-fluid align-items-center justify-content-center p-4 border border-2 border-primary rounded rounded-2 mt-5">
     <h2 style="text-align:center">Register Student</h2>
-    <form>
+    <form #registerForm="ngForm" (submit)="register(registerForm.value)"
+        [ngClass]="{'ng-valid':registerForm.valid,'ng-invalid':registerForm.invalid}">
         <dl>
             <dt>Enter Name</dt>
-            <dd><input type="text" class="form-control">
+            <dd><input type="text" class="form-control" name="name" #name="ngModel" ngModel required minlength="4">
 
-            <dt>Enter Password</dt>
-            <dd><input type="text" class="form-control">
+            <dt>Enter PinCode</dt>
+            <dd><input type="number" class="form-control" name="pincode" #pincode="ngModel" ngModel required
+                    min="100000">
 
-            <dt>Confirm Password</dt>
-            <dd><input type="text" class="form-control">
+            <dt>Enter Fee</dt>
+            <dd><input type="number" class="form-control" name="fee" #fee="ngModel" ngModel required min="1000000">
 
-            <dt>Enter Age</dt>
-            <dd><input type="number" class="form-control">
-            
-            <dt>Select Class</dt>
-            <select class="form-select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
+            <dt>Select DOJ</dt>
+            <dd><input type="date" class="form-control" name="doj" #doj="ngModel" ngModel required>
+
+            <dt>Select DOB</dt>
+            <dd><input type="date" class="form-control" name="dob" #dob="ngModel" ngModel required>
+
+            <dt>Select City</dt>
+            <select class="form-select" name="city" #city="ngModel" ngModel required>
+                <option value="New York">New York</option>
+                <option value="London">London</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Sidni">Sidni</option>
+                <option value="Perth">Perth</option>
             </select>
-
-            <dt class="form-group form-group-lg">Fee Paid?</dt>
-                <input type="radio">Yes
-                <input type="radio">No
         </dl>
 
-        <button class="btn btn-danger w-100">Register</button>
+        <button class="btn btn-danger w-100"
+            [disabled]="registerForm.invalid || registerForm.pristine">Register</button>
 
     </form>
 </div>
+
+<div class="col-9">
+    <h3>Form State Services</h3>
+    <dl>
+        <dt>Pristine [Form is Untouched]</dt>
+        <dd>{{registerForm.pristine}}</dd>
+        <dt>Dirty [Form Modified]</dt>
+        <dd>{{registerForm.dirty}}</dd>
+        <dt>Valid [All Fields are valid]</dt>
+        <dd>{{registerForm.valid}}</dd>
+        <dt>Invalid [Any one Field is not Valid]</dt>
+        <dd>{{registerForm.invalid}}</dd>
+        <dt>Form Submitted</dt>
+        <dd>{{registerForm.submitted}}</dd>
+    </dl>
+</div> -->
+
+
+
+
+
+<div
+    class="container-fluid align-items-center justify-content-center p-4 border border-2 border-primary rounded rounded-2 mt-5">
+    <h2 style="text-align:center">Register Student</h2>
+    <h2>Input State Validations</h2>
+    <form #registerForm="ngForm" (submit)="register(registerForm.value)"
+        [ngClass]="{'ng-valid':registerForm.valid,'ng-invalid':registerForm.invalid}">
+        <dl>
+            <dt>Enter Name</dt>
+            <dd><input type="text" class="form-control" name="name" #name="ngModel" ngModel required minlength="4">
+            <span *ngIf="name.invalid">Enter Name</span>
+            <dt>Enter Phone Number</dt>
+            <dd><input type="number" class="form-control" placeholder="Ex: 9182633333" name="phone" #phone="ngModel" ngModel required pattern="[7-9]{1}[0-9]{9}">
+                <span *ngIf="phone.pristine">Enter Phone Number</span>
+                <span *ngIf="phone.dirty && phone.invalid">Invalid Phone Number</span>
+            </dd>
+            <dt>Enter PinCode</dt>
+            <dd><input type="number" class="form-control" name="pincode" #pincode="ngModel" ngModel required min="100000" max="999999">
+
+            <dt>Enter Fee</dt>
+            <dd><input type="number" class="form-control" name="fee" #fee="ngModel" ngModel required min="1000000">
+
+            <dt>Select DOJ</dt>
+            <dd><input type="date" class="form-control" name="doj" #doj="ngModel" ngModel required>
+
+            <dt>Select DOB</dt>
+            <dd><input type="date" class="form-control" name="dob" #dob="ngModel" ngModel required>
+
+            <dt>Select City</dt>
+            <select class="form-select" name="city" #city="ngModel" ngModel required>
+                <option value="New York">New York</option>
+                <option value="London">London</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Sidni">Sidni</option>
+                <option value="Perth">Perth</option>
+            </select>
+        </dl>
+
+        <button class="btn btn-danger w-100"
+            [disabled]="registerForm.invalid || registerForm.pristine">Register</button>
+
+    </form>
+</div>
+
+{{phone.errors.rquired}} - {{phone.errors.invalid}}

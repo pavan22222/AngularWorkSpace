@@ -1,0 +1,68 @@
+<div class="container-fluid justify-content-center align-items-center">
+    <h2 class="text-center bg-success">Reactive Form</h2>
+    <form [formGroup]="formGroup" class="row bg-light" (submit)="submit(formGroup.value)">
+        <dl class="col-5" style="margin-left:30px">
+            <dt>Enter Id</dt>
+            <dd><input type="text" formControlName="id" class="form-control"></dd>
+            <dt>Enter Name</dt>
+            <dd><input type="text" formControlName="name" class="form-control"></dd>
+            <dt>Enter PhoneNumber</dt>
+            <dd><input type="number" formControlName="phoneNumber" class="form-control"></dd>
+            <span *ngIf="phoneNumber.invalid" class="text-danger">Invalid Phone Number</span>
+            <dt>Enter Email</dt>
+            <dd><input type="text" formControlName="email" class="form-control"></dd>
+            <span *ngIf="email.invalid" class="text-danger">Invalid Email</span>
+            <dt>Enter DOB</dt>
+            <dd><input type="date" formControlName="dob" class="form-control"></dd>
+        </dl>
+        <dl class="col-6">
+            <dt>Enter DOJ</dt>
+            <dd><input type="date" formControlName="doj" class="form-control"></dd>
+            <dt>Enter Fee</dt>
+            <dd><input type="number" formControlName="fee" class="form-control"></dd>
+            <dt>Enter PinCode</dt>
+            <dd><input type="number" formControlName="pincode" class="form-control"></dd>
+            <dt>Select City</dt>
+            <dd>
+                <select formControlName="city" class="form-select">
+                    <option value="New York">New York</option>
+                    <option value="London">London</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Sidni">Sidni</option>
+                    <option value="Perth">Perth</option>
+                </select>
+            </dd>
+        </dl>
+        
+       <button class="btn btn-success btn-lg " style="margin-left: 30px;">Register</button>
+
+    </form>
+
+</div>
+
+<div class="container-fluid align-items-center justify-content-center" style="margin-top: 100px;">
+    <h2 class="text-center bg-lite" style="margin-bottom: 20px;">Nested Form Group</h2>
+    <form [formGroup]="nestedFormGroup" class="row" (submit)="nextedSubmit(nestedFormGroup.value)">
+        <dl class="col-6">
+            <dt>Enter Name</dt>
+            <dd><input type="text" formControlName="name" class="form-control"></dd>
+            <dt>Enter Age</dt>
+            <dd><input type="number" formControlName="age" class="form-control"></dd>
+            <span *ngIf="age.touched && age.invalid" class="text-danger">Age is Invalid</span>
+        </dl>
+        <dl class="col-6" formGroupName="address">
+            <dt>Enter Door No</dt>
+            <dd><input type="text" formControlName="doorNo" class="form-control"></dd>
+            <dt>Enter State</dt>
+            <dd><input type="text" formControlName="state" class="form-control"></dd>
+            <span *ngIf="state.dirty" class="text-danger">State is required</span>
+            <dt>Select Gender</dt>
+            <dd><input type="checkbox" formControlName="gender" class="form-check-input" value="Male">Male
+                <input type="checkbox" formControlName="gender" class="form-check-input" value="FeMale">FeMale</dd>
+        </dl>
+        <button class="btn btn-primary btn-lg">Save</button>
+    </form>
+
+    {{state.value}}
+
+</div>

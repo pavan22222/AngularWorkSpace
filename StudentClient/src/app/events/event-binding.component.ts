@@ -12,4 +12,16 @@ export class EventBindingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  saveClick(event){
+
+    document.write(`id :${event.target.name}`)
+
+  }
+
+
+  updateClick(event:Event,name,ages:Array<any>,obj:object){
+
+   console.log(event,name,ages,obj)
+  }
+
 }

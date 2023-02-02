@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <h2>Child Component</h2>
+    <p>Data From Parent Component
+        {{msg}}  <br>
+        {{product | json}}
+    </p>
+
+    <div>
+        <input type="text" [(ngModel)]="name" class="form-control">
+    </div>
+    <br>
+    <button (click)="sendMessage()" class="btn btn-success">Send Message</button>
+
+    <button style="margin-left: 20px;" (click)="sendObject()" class="btn btn-danger">Send Object</button>
+</div>
