@@ -14,6 +14,7 @@
             <th>Pin Code</th>
             <th>DOB</th>
             <th>DOJ</th>
+            <th>EDIT</th>
         </thead>
         <tbody>
             <tr *ngFor="let student of updatedStudentList">
@@ -24,8 +25,18 @@
                 <td>{{student.pincode}}</td>
                 <td>{{student.dob}}</td>
                 <td>{{student.doj}}</td>
+                <td>
+                    <a class=" btn btn-primary"routerLink="details/{{student.id}}">Edit</a>
+                </td>
             </tr>
         </tbody>
     </table>
 
 </div>
+
+<div>
+    Error Msg::{{errorMsg}}
+</div>
+
+<router-outlet></router-outlet>
+

@@ -13,6 +13,7 @@ export class StudentListComponent implements OnInit {
   titleName="Student Summary"
   studentList:Array<Student>=new Array();
   updatedStudentList:Array<Student>;
+  errorMsg:string;
 
   filterList:Array<string>;
 
@@ -20,7 +21,7 @@ export class StudentListComponent implements OnInit {
   constructor(private studentService:StudentService,private activateRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.studentService.getStudents().subscribe((data) => {
+    this.studentService.getStudents().subscribe(data => {
       this.studentList = data;
       this.filterList = this.studentList.map((ele) => {
         return ele.city;
@@ -33,12 +34,15 @@ export class StudentListComponent implements OnInit {
       temp.push('All');
       this.filterList=temp;
       this.updatedStudentList=this.studentList;
-    });
-    alert(JSON.stringify(this.activateRoute.snapshot.paramMap.get("name")));
+    },
+    (err) =>{
+      this.errorMsg=err.message;
+    })
   }
 
-  async setFilterList(){
-
+  async showData(data):Promise<any>{
+    alert(data)
+    return data[0];
   }
 
   filterChange(filterName:any){

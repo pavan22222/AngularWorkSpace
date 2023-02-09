@@ -6,3 +6,8 @@
     type?:string;
     available:boolean;
 }
+
+export interface CanLeaveComp{
+
+    canDeactivate:()=> boolean;
+}

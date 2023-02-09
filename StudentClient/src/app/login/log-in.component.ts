@@ -14,4 +14,9 @@ export class LogInComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submit(logInData){
+    localStorage.setItem('currentUser',JSON.stringify(logInData));
+    console.log(localStorage)
+  }
+
 }

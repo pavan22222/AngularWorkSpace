@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { StructuralDirectivesComponent } from './directives/structural-directives.component';
 import { AttributeDirectivesComponent } from './directives/attribute-directives.component';
 import { LogInComponent } from './login/log-in.component';
-import { RegisterComponent } from './login/register/register.component';
+import { RegisterComponent } from './register/register.component';
 import { OneWayBindingComponent } from './bindings/one-way-binding.component';
 import { TwoWayBindingComponent } from './bindings/two-way-binding.component';
 import { MVVMComponent } from './bindings/mvvm.component';
@@ -24,6 +24,9 @@ import { PipesComponent } from './pipes/pipes.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { ReactiveFormComponent } from './forms/reactive-form.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
+import { ObservableTestComponent } from './observable/observable-test.component';
+import { PromiseTestComponent } from './promise/promise-test.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { ReactiveFormComponent } from './forms/reactive-form.component';
     PipesComponent,
     FilterPipe,
     SortPipe,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    StudentDetailsComponent,
+    ObservableTestComponent,
+    PromiseTestComponent
   ],
   imports: [
     BrowserModule,
